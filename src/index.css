@@ -1,13 +1,131 @@
-body {
+/* Import a modern font */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+
+/* Global Styles */
+body, html {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  padding: 0;
+  font-family: 'Inter', sans-serif;
+  background-color: #f9f9f9;
+  color: #2c2c2c;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+h1, h2, h3 {
+  color: #2c2c2c;
+  font-weight: 700;
+  text-align: center;
+  margin: 0;
+}
+
+button {
+  background: linear-gradient(135deg, #ff6f61, #ff9478); /* Gradient button */
+  border: none;
+  color: white;
+  padding: 14px 25px;
+  font-size: 1.2rem;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  box-shadow: 0 10px 20px rgba(255, 111, 97, 0.3); /* Elevated shadow */
+}
+
+button:hover {
+  background: linear-gradient(135deg, #ff9478, #ffb09f);
+  transform: translateY(-3px);
+  box-shadow: 0 15px 25px rgba(255, 111, 97, 0.4); /* Larger shadow on hover */
+}
+
+input, select, textarea {
+  width: 100%;
+  padding: 14px;
+  margin-bottom: 20px;
+  font-size: 1rem;
+  border: 1px solid #ddd;
+  border-radius: 15px;
+  background-color: white;
+  color: #333;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05); /* Subtle shadow */
+  transition: all 0.3s ease;
+}
+
+input:focus, select:focus, textarea:focus {
+  outline: none;
+  border-color: #ff6f61;
+  box-shadow: 0 6px 12px rgba(255, 111, 97, 0.2); /* Focus shadow */
+}
+
+.success-message {
+  color: #28a745;
+  font-size: 1.2rem;
+  text-align: center;
+  margin: 10px 0;
+  animation: fadeIn 0.5s ease-in-out, fadeOut 0.5s ease-in-out 2.5s;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes fadeOut {
+  from { opacity: 1; }
+  to { opacity: 0; }
+}
+
+/* Responsive Layout */
+@media (max-width: 768px) {
+  body {
+    padding: 0 15px;
+  }
+
+  h1, h2, h3 {
+    font-size: 1.5rem;
+  }
+
+  button {
+    width: 100%;
+  }
+}
+/* Base styles for the navigation links */
+.nav-link {
+  display: inline-block;
+  background-color: var(--button-background-color); /* Button-like background */
+  color: var(--button-text-color); /* Text color */
+  padding: 14px 25px; /* Padding for button-like appearance */
+  font-size: 1.1rem; /* Font size for readability */
+  border-radius: 30px; /* Rounded corners */
+  text-decoration: none; /* Remove underline from links */
+  text-align: center;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease; /* Smooth hover effects */
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1); /* Soft shadow */
+  margin: 10px; /* Space around the links */
+}
+
+.nav-link:hover {
+  background-color: var(--button-hover-background-color); /* Hover effect */
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2); /* Larger shadow on hover */
+  transform: translateY(-3px); /* Slight lift effect on hover */
+}
+
+/* Navigation container for proper alignment */
+nav {
+  display: flex;
+  justify-content: center; /* Center navigation links */
+  align-items: center;
+  gap: 20px; /* Space between the links */
+  margin-bottom: 20px;
+}
+
+/* Responsive styles for mobile */
+@media (max-width: 768px) {
+  nav {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .nav-link {
+    width: 90%; /* Full width on smaller screens */
+    text-align: center;
+    margin-bottom: 10px;
+  }
 }

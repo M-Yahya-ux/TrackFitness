@@ -1,0 +1,48 @@
+/* Button Base Styles - Consistent for All Pages */
+button {
+    background-color: var(--button-background-color); /* Use the CSS variable for dynamic theming */
+    color: var(--button-text-color);
+    padding: 14px 25px; /* Padding for consistent sizing */
+    font-size: 1.1rem; /* Larger text for better readability */
+    border-radius: 30px; /* Rounded button corners */
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1); /* Soft shadow for modern effect */
+    margin: 10px 0; /* Spacing between buttons */
+    display: inline-block;
+  }
+  
+  button:hover {
+    background-color: var(--button-hover-background-color); /* Hover effect using variables */
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2); /* Larger shadow on hover */
+    transform: translateY(-3px); /* Slight lift effect */
+  }
+  
+  /* Button Alignment */
+  .button-container {
+    display: flex;
+    justify-content: space-around; /* Space buttons evenly */
+    align-items: center;
+    flex-wrap: wrap; /* Ensure buttons wrap on smaller screens */
+    margin-top: 20px; /* Space above buttons */
+  }
+  
+  .button-container button {
+    width: 100%;
+    max-width: 250px; /* Consistent button size across all screens */
+  }
+  
+  /* Mobile Responsive */
+  @media (max-width: 768px) {
+    .button-container {
+      flex-direction: column; /* Stack buttons on small screens */
+      align-items: center;
+    }
+  
+    .button-container button {
+      width: 90%; /* Full width for buttons on mobile */
+      margin-bottom: 10px;
+    }
+  }
+  

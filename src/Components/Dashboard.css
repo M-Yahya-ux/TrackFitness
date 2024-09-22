@@ -1,0 +1,242 @@
+.dashboard {
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 40px;
+    background-color: #fff;
+    border-radius: 30px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05); /* Soft shadow */
+  }
+  
+  .stats {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 20px; /* Ensures a proper gap between cards */
+  }
+  
+  .stat-item {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(15px); /* Glass effect */
+    border-radius: 20px;
+    padding: 30px;
+    text-align: center;
+    margin: 10px;
+    flex: 1;
+    min-width: 250px;
+    max-width: 350px; /* Limits the maximum width of each card */
+    height: 100%; /* Makes sure all cards have the same height */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-sizing: border-box; /* Ensures padding is included in width calculations */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* Aligns content to the center and bottom */
+  }
+  
+  .stat-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15); /* Larger shadow */
+  }
+  
+  .stat-item h3 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #2c3e50;
+    margin-bottom: 15px; /* Added spacing */
+  }
+  
+  .stat-item p {
+    font-size: 1.2rem;
+    color: #7f8c8d;
+    word-wrap: break-word; /* Prevents overflow of text */
+    margin-bottom: 15px; /* Added spacing */
+  }
+  
+  /* Progress bar container */
+  .progress-bar {
+    background-color: #e0e0e0;
+    border-radius: 30px;
+    height: 20px;
+    margin-top: 20px;
+    overflow: hidden;
+    width: 100%; /* Make sure the progress bar fits the width of the container */
+    max-width: 300px; /* You can adjust this to the desired width */
+    margin-left: auto;
+    margin-right: auto; /* Center the progress bar */
+    box-sizing: border-box;
+  }
+  
+  /* Inner progress element */
+  .progress {
+    background: linear-gradient(135deg, #26c6da, #42a5f5); /* Gradient blue progress */
+    height: 100%;
+    border-radius: 30px;
+    transition: width 0.5s ease;
+  }
+  
+  /* Button styling */
+  .action-button {
+    background-color: #ff6f61;
+    color: white;
+    padding: 16px 30px; /* Increased padding for larger size */
+    margin-top: 20px;
+    font-size: 1.1rem; /* Slightly larger font size */
+    border-radius: 30px; /* Rounded corners for buttons */
+    cursor: pointer;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+    width: 100%; /* Ensures buttons take full width inside the stat-item */
+    max-width: 300px; /* Adjusted width */
+    margin-left: auto;
+    margin-right: auto; /* Center the button */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Button shadow */
+  }
+  
+  .action-button:hover {
+    background-color: #ff8a65;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2); /* Larger shadow on hover */
+  }
+  
+  .goal-list {
+    margin-top: 50px;
+  }
+  
+  .goal-item {
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 30px;
+    margin-bottom: 30px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%; /* Ensure all goal cards have the same height */
+  }
+  
+  .goal-completed {
+    color: #2ecc71;
+    font-size: 1.1rem;
+    text-align: center;
+    margin-top: 20px;
+  }
+  
+  /* Responsive */
+  @media (max-width: 768px) {
+    .stats {
+      flex-direction: column;
+    }
+  
+    .stat-item {
+      width: 100%;
+      max-width: none; /* Remove the max-width constraint */
+    }
+  
+    .progress-bar, .action-button {
+      width: 100%; /* Ensure full width for small screens */
+      max-width: 100%; /* Remove max-width on small screens */
+    }
+  }
+  .dashboard {
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 40px;
+    background-color: #fff;
+    border-radius: 30px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05); /* Soft shadow */
+  }
+  
+  .stats {
+    display: flex;
+    flex-wrap: wrap; /* Ensure cards wrap if they overflow */
+    gap: 20px; /* Space between the cards */
+    justify-content: flex-start; /* Keep the progress bar next to activity cards */
+  }
+  
+  .stat-item {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(15px); /* Glass effect */
+    border-radius: 20px;
+    padding: 30px;
+    text-align: center;
+    margin: 10px;
+    flex: 1;
+    min-width: 250px;
+    max-width: 350px; /* Limits the maximum width of each card */
+    height: auto; /* Allow height to adjust based on content */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-sizing: border-box; /* Ensures padding is included in width calculations */
+  }
+  
+  .stat-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15); /* Larger shadow */
+  }
+  
+  .stat-item h3 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #2c3e50;
+    margin-bottom: 15px; /* Space between title and content */
+  }
+  
+  .stat-item p {
+    font-size: 1.2rem;
+    color: #7f8c8d;
+    word-wrap: break-word; /* Prevents overflow of text */
+    margin-bottom: 15px;
+  }
+  
+  /* Progress bar container */
+  .progress-bar {
+    background-color: #e0e0e0;
+    border-radius: 30px;
+    height: 20px;
+    margin-top: 20px;
+    overflow: hidden;
+    width: 100%; /* Ensure it stays within the card's width */
+    max-width: 300px;
+    margin-left: auto;
+    margin-right: auto; /* Center the progress bar */
+    box-sizing: border-box;
+  }
+  
+  /* Inner progress element */
+  .progress {
+    background: linear-gradient(135deg, #26c6da, #42a5f5);
+    height: 100%;
+    border-radius: 30px;
+    transition: width 0.5s ease;
+  }
+  
+  /* Responsive styles for mobile and smaller screens */
+  @media (max-width: 1024px) {
+    .stats {
+      justify-content: center; /* Center the cards on smaller screens */
+    }
+  
+    .stat-item {
+      flex: 1 1 calc(50% - 40px); /* Allow two cards per row on tablet */
+      max-width: none; /* Let the cards fill more space */
+    }
+  
+    .progress-bar {
+      max-width: 100%; /* Ensure progress bar fills the container */
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .stats {
+      flex-direction: column; /* Stack the cards vertically on mobile */
+      align-items: center; /* Center-align the cards */
+    }
+  
+    .stat-item {
+      width: 100%; /* Full width for cards on mobile */
+      margin-bottom: 20px; /* Add space between stacked cards */
+    }
+  
+    .progress-bar {
+      width: 100%; /* Full width for progress bar on mobile */
+    }
+  }
+  
